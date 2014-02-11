@@ -201,7 +201,15 @@
                     });
                     return array;
                 };
-            data = step(list.el.find(list.options.listNodeName).first(), depth);
+            var el;
+
+            if (list.el.is(list.options.listNodeName)) {
+                el = list.el;
+            } else {
+                el = list.el.find(list.options.listNodeName).first();
+            }
+            data = step(el, depth);
+
             return data;
         },
 
