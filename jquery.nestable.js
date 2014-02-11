@@ -548,6 +548,11 @@
             if (this.pointEl.hasClass(opt.handleClass)) {
                 this.pointEl = this.pointEl.closest( opt.itemNodeName );
             }
+
+            if (opt.maxDepth == 1 && !this.pointEl.hasClass(opt.itemClass)) {
+                this.pointEl = this.pointEl.closest("." + opt.itemClass);
+            }
+
             if (this.pointEl.hasClass(opt.emptyClass)) {
                 isEmpty = true;
             }
